@@ -1,0 +1,41 @@
+.card{
+    display: flex;
+    background-color: rgba(17, 17, 153, 0.534);
+    margin: 8px;
+    padding: 1px;;
+    
+}
+
+.card h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(99, 81, 255);
+    min-width: 50%;
+    min-height: 10px;
+    margin: 3px;
+    border: 3px solid rgb(173, 16, 134);
+    padding: 5%;
+}
+
+.cerrarBoton{
+    width: 40px;
+    height: 40px;
+    margin: 8%;
+    background-image: url('../imagenes/3-36968_rick-and-morty-portal-edible-printing-rick-and.png');
+    background-repeat: no-repeat;
+  background-size: cover;
+    
+    border-radius: 50px;;
+}
+
+.cerrarBoton:hover{
+    background-image: url('../imagenes/3-36968_rick-and-morty-portal-edible-printing-rick-and.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transform: scale(1.5);
+    border: none;
+    color: white;
+
+}

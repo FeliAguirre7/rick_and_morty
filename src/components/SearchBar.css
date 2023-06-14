@@ -1,0 +1,27 @@
+
+.search{
+    color:aliceblue
+}
+
+.boton1{
+    background-color: rgb(63, 63, 253);
+    border: 2px solid greenyellow;
+    color: aliceblue;
+    margin: 4px;
+}
+
+.boton2{
+    background-color: yellow;
+    border: 2px solid darkblue;
+}
+
+
+.boton1:hover{
+    cursor: pointer;
+
+}
+
+.boton2:hover{
+    cursor: pointer;
+  
+}

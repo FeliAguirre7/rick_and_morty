@@ -1,0 +1,36 @@
+.cards_container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: 3px solid rgb(169, 252, 91);
+   padding: 2px;
+   justify-content: space-evenly;
+    } 
+ 
+ .card {
+    /* Estilos para cada tarjeta individual */
+    /* Ajusta el ancho según tus necesidades */
+    display: flex;
+    
+    padding: 30px;
+    min-width: 25%;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+    border: 10px solid rgb(94, 14, 76);
+    border-radius: 4%;
+    flex-direction: column;
+    margin: 20px;
+    min-height: 25%;
+ }
+
+ .card img{
+   display: flex;
+   padding: 2%;
+   width: 100%;
+   border: 8px solid green;
+   border-radius: 50%;
+   
+ }
+ 
+

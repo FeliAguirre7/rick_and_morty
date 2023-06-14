@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Cards from './components/Cards.jsx';
+import NavBar from '../src/components/NavBar';
+import axios from 'axios'
+
+
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   const [characters, setCharacters] = useState([])
+   const [title, setTitle] = useState("Rick and Morty characters")
+   const settingTitle = (str) => {
+      setTitle(str)
+   }
+
+   function onSearch(id) {
+      axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+         if (data.name) {
+            const char = characters.find((ch) => Number(ch.id) === Number(id))
+            if (char) return alert("ese personaje ya existe")
+            setCharacters((oldChars) => [...oldChars, data]);
+         } else {
+            window.alert('¡No hay personajes con este ID!');
+         }
+      });
+   }
+   function onClose(id) {
+      
+      const newCharacters = characters.filter((ch) => ch.id !== Number(id))
+      setCharacters(newCharacters)
+   
+
+   }
+   return (
+      <div className='App'>
+         <NavBar onSearch={onSearch} />
+         <Cards characters={characters} onClose={onClose} settingTitle={settingTitle} />
+      </div>
+   );
 }
+
 
 export default App;
