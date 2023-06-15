@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import './Card.css'
+import { Link } from 'react-router-dom';
+import Detail from './Detail';
 
 
 export default function Card({ id, name, status, species, gender, origin, image , onClose, settingTitle}) {
@@ -11,12 +13,14 @@ settingTitle("Bienvenidos")
    return (
       <div className="card">
          <button className="cerrarBoton" onClick={()=> onClose(id)}>X</button>
+        <Link to={`/Detail/${id}`}>
          <h2>{name}</h2>
          <h2>{status}</h2>
          <h2>{species}</h2>
          <h2>{gender}</h2>
          <h2>{origin}</h2>
          <img src={image} alt={name} />
+         </Link>
       </div>
    );
 }

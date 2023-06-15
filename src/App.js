@@ -3,8 +3,11 @@ import './App.css';
 import Cards from './components/Cards.jsx';
 import NavBar from './components/NavBar';
 import axios from 'axios'
-import { Routes, Route } from 'react-router-dom';
-import  Landing  from "./components/Landing.jsx"
+import { Routes, Route, useLocation } from 'react-router-dom';
+import Landing from "./components/Landing.jsx"
+import About from "./components/About"
+import Detail from "../src/components/Detail"
+
 
 
 
@@ -29,18 +32,35 @@ function App() {
       });
    }
    function onClose(id) {
-      
+
       const newCharacters = characters.filter((ch) => ch.id !== Number(id))
       setCharacters(newCharacters)
-   
+
 
    }
+
+
+   const pathname = useLocation()
+
    return (
       <div className='App'>
-         <NavBar onSearch={onSearch} />
+         {
+            pathname === "/" ? null : <NavBar onSearch={onSearch} />
+         }
+
          <Routes>
-       <Route path="/" element={<Landing/>}> </Route>
+            <Route path="/" element={<Landing />}> </Route>
+            <Route path="/home" element={<Cards />}> </Route>
+            <Route path="/about" element={<About />}> </Route>
+            <Route path="/detail/:id" element={<Detail />}> </Route>
          </Routes>
+         {
+            pathname !== "/" && pathname !== "/home" && pathname !== "/about" && pathname !== "/detail:id" ? (
+               <ErrorNotFound />
+            ) : null
+         }
+
+
          <Cards characters={characters} onClose={onClose} settingTitle={settingTitle} />
       </div>
    );
