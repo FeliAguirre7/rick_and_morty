@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import './App.css';
 import Cards from './components/Cards.jsx';
-import NavBar from '../src/components/NavBar';
+import NavBar from './components/NavBar';
 import axios from 'axios'
+import { Routes, Route } from 'react-router-dom';
+import  Landing  from "./components/Landing.jsx"
 
 
 
@@ -36,6 +38,9 @@ function App() {
    return (
       <div className='App'>
          <NavBar onSearch={onSearch} />
+         <Routes>
+       <Route path="/" element={<Landing/>}> </Route>
+         </Routes>
          <Cards characters={characters} onClose={onClose} settingTitle={settingTitle} />
       </div>
    );

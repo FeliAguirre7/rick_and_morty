@@ -16,6 +16,7 @@
     margin: 3px;
     border: 3px solid rgb(173, 16, 134);
     padding: 5%;
+    flex-shrink: 0;
 }
 
 .cerrarBoton{
