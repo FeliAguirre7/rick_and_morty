@@ -1,12 +1,12 @@
 .Nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: rgba(168, 11, 84, 0.493);
     border: 1px  solid greenyellow;
-    width: 40%;
+    width: 100%;
     align-items: center;
     align-content: flex-start;
-    flex-direction: column-reverse
+    flex-direction: row-reverse
 }
  .lista{
     display: flex;

@@ -4,16 +4,17 @@ import SearchBar from './SearchBar'
 import { Link } from 'react-router-dom'
 
 export default function NavBar({onSearch}) {
+
+
   return (
     <div className ='Nav'>
-      <ul className="lista">
-<li>
-  <Link to="/about"><button>Creador</button></Link>
-</li>
-<li>
-  <Link to="/home"><button>Inicio</button></Link>
-</li>
-</ul>
+      <Link to={"/"}>
+        <div>Cerrar sesión</div>
+      </Link>
+  <Link to={"/about"}><div>Creador</div></Link>
+
+  <Link to={"/home"}><div>Inicio</div></Link>
+
   <SearchBar onSearch={onSearch}/>
   </div>
   )

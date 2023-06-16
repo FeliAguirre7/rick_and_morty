@@ -7,6 +7,9 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Landing from "./components/Landing.jsx"
 import About from "./components/About"
 import Detail from "../src/components/Detail"
+import ErrorNotFound from "./components/ErrorNotFound"
+import Form from './components/Form';
+
 
 
 
@@ -44,24 +47,37 @@ function App() {
 
    return (
       <div className='App'>
-         {
-            pathname === "/" ? null : <NavBar onSearch={onSearch} />
-         }
+       
+         { pathname === "/" ? null : <NavBar onSearch={onSearch} />}
+
 
          <Routes>
+        
             <Route path="/" element={<Landing />}> </Route>
-            <Route path="/home" element={<Cards />}> </Route>
+            <Route path="/" element={<Form />}> </Route>
             <Route path="/about" element={<About />}> </Route>
+            <Route 
+            path="/home" 
+            element={
+            <Cards
+            characters={characters} 
+            onClose={onClose} 
+            settingTitle={settingTitle}
+            />
+             }
+             ></Route>
+            
             <Route path="/detail/:id" element={<Detail />}> </Route>
          </Routes>
          {
-            pathname !== "/" && pathname !== "/home" && pathname !== "/about" && pathname !== "/detail:id" ? (
+            pathname !== "/" &&
+            pathname !== "/home" && 
+            pathname !== "/about" && 
+            pathname !== "/detail/:id" ? (
                <ErrorNotFound />
             ) : null
          }
-
-
-         <Cards characters={characters} onClose={onClose} settingTitle={settingTitle} />
+      
       </div>
    );
 }

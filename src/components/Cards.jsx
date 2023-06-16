@@ -2,7 +2,10 @@ import Card from './Card';
 import './Cards.css'
 
 export default function Cards({ characters, onClose, settingTitle }) {
+
    return (
+      
+      
       <div className="cards_container">
          {
             characters && characters.map((element, index) => (

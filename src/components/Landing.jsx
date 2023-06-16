@@ -1,11 +1,22 @@
 import React from 'react'
 import "../components/Landing.css"
+import { Link } from 'react-router-dom'
 
 
-export default function Landing() {
+
+
+
+export default function Landing(onSearch) {
+ 
   return (
-    <div>
-        <h1 className="bienvenida">Bienvenidos a Rick y Morty</h1>
+    <div className="landing">
+  
+        <h1>Bienvenidos a Rick y Morty</h1>
+        <Link to="/home">
+    
+          <button>Empezar</button>
+          </Link>
+          
         </div>
   )
 }
