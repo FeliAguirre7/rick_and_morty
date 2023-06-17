@@ -54,7 +54,7 @@ function App() {
          <Routes>
         
             <Route path="/" element={<Landing />}> </Route>
-            <Route path="/" element={<Form />}> </Route>
+            
             <Route path="/about" element={<About />}> </Route>
             <Route 
             path="/home" 

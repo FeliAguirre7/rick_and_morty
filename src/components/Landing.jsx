@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 
 
-export default function Landing(onSearch) {
+export default function Landing() {
  
   return (
     <div className="landing">
