@@ -14,6 +14,9 @@ export default function NavBar({onSearch}) {
   <Link to={"/about"}><div>Creador</div></Link>
 
   <Link to={"/home"}><div>Inicio</div></Link>
+  <Link className="favButton" to={"/favorites"}>
+        <div>Favorites</div>
+      </Link>
 
   <SearchBar onSearch={onSearch}/>
   </div>

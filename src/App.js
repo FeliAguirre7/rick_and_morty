@@ -8,7 +8,8 @@ import Landing from "./components/Landing.jsx"
 import About from "./components/About"
 import Detail from "../src/components/Detail"
 import ErrorNotFound from "./components/ErrorNotFound"
-import Form from './components/Form';
+import Favorites from './components/Favorites';
+
 
 
 
@@ -43,41 +44,49 @@ function App() {
    }
 
 
+   const location = useLocation()
    const pathname = useLocation()
 
    return (
       <div className='App'>
-       
-         { pathname === "/" ? null : <NavBar onSearch={onSearch} />}
+         {console.log("--------mira-aqui---->", pathname)}
+
+         {location.pathname !== "/" && <NavBar onSearch={onSearch} />}
+
 
 
          <Routes>
-        
+
             <Route path="/" element={<Landing />}> </Route>
-            
+
             <Route path="/about" element={<About />}> </Route>
-            <Route 
-            path="/home" 
-            element={
-            <Cards
-            characters={characters} 
-            onClose={onClose} 
-            settingTitle={settingTitle}
-            />
-             }
-             ></Route>
-            
+            <Route
+               path="/home"
+               element={
+                  <Cards
+                     characters={characters}
+                     onClose={onClose}
+                     settingTitle={settingTitle}
+                  />
+               }
+            ></Route>
+
             <Route path="/detail/:id" element={<Detail />}> </Route>
+            <Route path="*" element={<ErrorNotFound />}></Route>
+            <Route
+               path="/favorites"
+               element={<Favorites onClose={onClose} />}
+            ></Route>
          </Routes>
          {
             pathname !== "/" &&
-            pathname !== "/home" && 
-            pathname !== "/about" && 
-            pathname !== "/detail/:id" ? (
+               pathname !== "/home" &&
+               pathname !== "/about" &&
+               pathname !== "/detail/:id" ? (
                <ErrorNotFound />
             ) : null
          }
-      
+
       </div>
    );
 }
