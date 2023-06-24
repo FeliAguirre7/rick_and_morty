@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 
 import "../components/Landing.css"
+import { Link } from 'react-router-dom';
 
 
   const regExEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 const regexPassword =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,10}/;
 
-export default function Landing({login}) {
+export default function Landing({}) {
 
 
 
@@ -67,7 +68,7 @@ export default function Landing({login}) {
         email: "",
         password: ""
       })
-    login(inputs)
+  
     } else{
     return alert("Oh jeez")
   }
@@ -101,7 +102,7 @@ export default function Landing({login}) {
             {
               Object.keys(inputsErrors).length === 0 ? (
 
-                <button type="submit">Iniciar sesión</button>
+              <Link to="/home">  <button type="submit">Iniciar sesión</button></Link>
              ) : null
             }
 

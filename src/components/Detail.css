@@ -1,0 +1,17 @@
+.text{
+    display: flex;
+    
+    width: 100%;
+    background-color: rgba(0, 0, 255, 0.411);
+    flex-direction: column;
+    margin: 180px;
+    border: 3px solid greenyellow;
+}
+
+.image{
+display: flex;
+    align-items: center;
+    width: 111%;
+    height: 111%;
+    
+}
