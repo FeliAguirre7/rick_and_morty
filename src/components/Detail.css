@@ -1,17 +1,19 @@
 .text{
     display: flex;
-    
+    color: rgb(161, 199, 86);
     width: 100%;
     background-color: rgba(0, 0, 255, 0.411);
     flex-direction: column;
-    margin: 180px;
+    margin: 100px;
     border: 3px solid greenyellow;
 }
 
 .image{
 display: flex;
     align-items: center;
-    width: 111%;
+    width: 160%;
     height: 111%;
+    justify-content: center;
+    flex-direction: column;
     
 }
